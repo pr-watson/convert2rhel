@@ -719,7 +719,6 @@
             automatically selects the subscription.
         discover+:
             filter: tag:auto-attach-pool
-<<<<<<< HEAD
 
 
 /assessment_report:
@@ -753,5 +752,3 @@
             and then, output the report to the user.
         discover+:
             filter: tag:success-report
-=======
->>>>>>> c88593b ([RHELC-970] Update CLI to introduce new subcommands for pre conversion analysis)
