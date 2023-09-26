@@ -69,6 +69,15 @@ _UBI_8_REPO_CONTENT = (
 # Path to the repository file that we store the RHEL8-compatible repo file.
 _UBI_8_REPO_PATH = os.path.join(_RHSM_TMP_DIR, "ubi_8.repo")
 
+_UBI_9_REPO_CONTENT = (
+    "[ubi-9-baseos-convert2rhel]\n"
+    "name=Red Hat Universal Base Image 9 - BaseOS added by Convert2RHEL\n"
+    "baseurl=https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/$basearch/baseos/os/\n"
+    "gpgcheck=1\n"
+    "enabled=1\n"
+)
+_UBI_9_REPO_PATH = os.path.join(_RHSM_TMP_DIR, "ubi_9.repo")
+
 _VERSIONLOCK_FILE_PATH = "/etc/yum/pluginconf.d/versionlock.list"  # This file is used by the dnf plugin as well
 versionlock_file = RestorableFile(_VERSIONLOCK_FILE_PATH)  # pylint: disable=C0103
 

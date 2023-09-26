@@ -100,14 +100,12 @@ class TestNeededSubscriptionManagerPkgs:
             mock.Mock(
                 return_value=[
                     create_pkg_information(name="subscription-manager"),
-                    create_pkg_information(name="subscription-manager-rhsm-certificates"),
+                    create_pkg_information(name="subscription-manager-rhsm-certificates.x86_64"),
                     create_pkg_information(name="subscription-manager-rhsm"),
                     create_pkg_information(name="python3-subscription-manager-rhsm"),
                     create_pkg_information(name="python3-cloud-what"),
                     create_pkg_information(name="json-c.x86_64"),
                     create_pkg_information(name="python-syspurpose"),
-                    create_pkg_information(name="python3-syspurpose"),
-                    create_pkg_information(name="dnf-plugin-subscription-manager"),
                     create_pkg_information(name="other-package"),
                     create_pkg_information(name="centos-release"),
                 ]
@@ -122,7 +120,6 @@ class TestNeededSubscriptionManagerPkgs:
             # ones as well)
             installed_pkgs = (
                 "python3-subscription-manager-rhsm",
-                "dnf-plugin-subscription-manager",
                 "other-package",
                 "centos-release",
             )
@@ -173,7 +170,7 @@ class TestNeededSubscriptionManagerPkgs:
             "get_installed_pkg_information",
             mock.Mock(
                 return_value=[
-                    create_pkg_information(name="subscription-manager-rhsm-certificates"),
+                    create_pkg_information(name="subscription-manager-rhsm-certificates.x86_64"),
                     create_pkg_information(name="python3-subscription-manager-rhsm"),
                     create_pkg_information(name="dnf-plugin-subscription-manager"),
                     create_pkg_information(name="other-package"),
@@ -192,7 +189,7 @@ class TestNeededSubscriptionManagerPkgs:
             "get_installed_pkg_information",
             mock.Mock(
                 return_value=[
-                    create_pkg_information(name="subscription-manager-rhsm-certificates"),
+                    create_pkg_information(name="subscription-manager-rhsm-certificates.x86_64"),
                     create_pkg_information(name="python3-subscription-manager-rhsm"),
                     create_pkg_information(name="dnf-plugin-subscription-manager"),
                     create_pkg_information(name="other-package"),
@@ -215,7 +212,7 @@ class TestNeededSubscriptionManagerPkgs:
                 frozenset(
                     (
                         "subscription-manager",
-                        "subscription-manager-rhsm-certificates",
+                        "subscription-manager-rhsm-certificates.x86_64",
                         "subscription-manager-rhsm",
                         "python-syspurpose",
                     )
@@ -227,7 +224,7 @@ class TestNeededSubscriptionManagerPkgs:
                 frozenset(
                     (
                         "subscription-manager",
-                        "subscription-manager-rhsm-certificates",
+                        "subscription-manager-rhsm-certificates.x86_64",
                         "python3-subscription-manager-rhsm",
                         "dnf-plugin-subscription-manager",
                         "python3-syspurpose",
@@ -242,7 +239,7 @@ class TestNeededSubscriptionManagerPkgs:
                 frozenset(
                     (
                         "subscription-manager",
-                        "subscription-manager-rhsm-certificates",
+                        "subscription-manager-rhsm-certificates.x86_64",
                         "python3-subscription-manager-rhsm",
                         "dnf-plugin-subscription-manager",
                         "python3-syspurpose",

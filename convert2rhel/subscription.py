@@ -793,7 +793,7 @@ def _relevant_subscription_manager_pkgs():
     """
     relevant_pkgs = [
         "subscription-manager",
-        "subscription-manager-rhsm-certificates",
+        "subscription-manager-rhsm-certificates.x86_64",
     ]
 
     if system_info.version.major == 7:
@@ -807,6 +807,9 @@ def _relevant_subscription_manager_pkgs():
             "python3-cloud-what",
             "json-c.x86_64",  # there's also an i686 version we don't need unless the json-c.i686 is already installed
         ]
+
+    elif system_info.version.major >= 9:
+        relevant_pkgs += ["libdnf-plugin-subscription-manager"]
 
     if system_info.is_rpm_installed("json-c.i686"):
         # In case the json-c.i686 is installed we need to download it together with its x86_64 companion. The reason
