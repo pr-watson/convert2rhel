@@ -21,10 +21,10 @@
 
     - name: Validate source distribution and major version
       fail:
-        msg: "The system must be CentOS/Oracle/Alma/Rocky Linux 7 or 8"
+        msg: "The system must be CentOS/Oracle/Alma/Rocky Linux 7, 8 or 9"
       when:
         - ansible_distribution not in ['CentOS', 'OracleLinux', 'AlmaLinux', 'Rocky']
-        - ansible_distribution_major_version in ['7', '8']
+        - ansible_distribution_major_version in ['7', '8', '9']
 
     - name: Patch repositories if dealing with CentOS8.
       block:
