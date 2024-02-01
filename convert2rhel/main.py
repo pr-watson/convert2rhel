@@ -19,7 +19,6 @@ __metaclass__ = type
 
 import logging
 import os
-import sys
 
 from convert2rhel import actions, applock, backup, breadcrumbs, checks, exceptions, grub, hostmetering
 from convert2rhel import logger as logger_module
