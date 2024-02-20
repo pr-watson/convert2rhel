@@ -1331,7 +1331,7 @@ def test_get_rhsm_facts_json_decode_error_el7(monkeypatch, global_tool_opts, cap
 
 @centos8
 @pytest.mark.skipif(pkgmanager.TYPE == "yum", reason="Test is only relevant for RHEL 8+")
-def test_get_rhsm_facts_json_decode_error_el7(monkeypatch, global_tool_opts, caplog, tmpdir, pretend_os):
+def test_get_rhsm_facts_json_decode_error_el8(monkeypatch, global_tool_opts, caplog, tmpdir, pretend_os):
     run_mock = RunSubprocessMocked(return_string="")
     facts_string = "cpu.cpu(s) :8 "
     facts_file = tmpdir.join("facts.json")
